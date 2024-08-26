@@ -35,13 +35,21 @@ jobs:
             laravel-versions: '^11.0'
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: mbstring, pdo, pdo_sqlite, sqlite
           coverage: none
+
       - name: Install dependencies
-        run: composer require "illuminate/database:${{ matrix.laravel-versions }}" --no-interaction --no-update --prefer-dist --no-progress --no-suggest
-      - name: Execute tests
+        run: |
+          composer require "illuminate/database:${{ matrix.laravel-versions }}" --no-interaction --no-update --prefer-dist --no-progress --no-suggest
+          composer install --no-interaction --prefer-dist --no-progress --no-suggest
+
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit --no-interaction --prefer-dist --no-progress --no-suggest
+
+      - name: Run tests
         run: vendor/bin/phpunit

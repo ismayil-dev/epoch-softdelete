@@ -12,27 +12,26 @@ jobs:
     strategy:
       matrix:
         php-versions: ['7.3', '7.4', '8.0', '8.1', '8.2', '8.3']
-        laravel-versions: ['^8.0', '^9.0', '^10.0', '^11.0']
+        eloquent-versions: ['^8.0', '^9.0', '^10.0', '^11.0']
         exclude:
-          # Exclude Laravel 8 on PHP versions < 7.3 as it's already implied in the matrix
           - php-versions: '7.3'
-            laravel-versions: '^9.0'
+            eloquent-versions: '^9.0'
           - php-versions: '7.3'
-            laravel-versions: '^10.0'
+            eloquent-versions: '^10.0'
           - php-versions: '7.3'
-            laravel-versions: '^11.0'
+            eloquent-versions: '^11.0'
           - php-versions: '7.4'
-            laravel-versions: '^9.0'
+            eloquent-versions: '^9.0'
           - php-versions: '7.4'
-            laravel-versions: '^10.0'
+            eloquent-versions: '^10.0'
           - php-versions: '7.4'
-            laravel-versions: '^11.0'
+            eloquent-versions: '^11.0'
           - php-versions: '8.0'
-            laravel-versions: '^10.0'
+            eloquent-versions: '^10.0'
           - php-versions: '8.0'
-            laravel-versions: '^11.0'
+            eloquent-versions: '^11.0'
           - php-versions: '8.1'
-            laravel-versions: '^11.0'
+            eloquent-versions: '^11.0'
     steps:
       - uses: actions/checkout@v3
 
@@ -45,11 +44,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "illuminate/database:${{ matrix.laravel-versions }}" --no-interaction --no-update --prefer-dist --no-progress --no-suggest
-          composer install --no-interaction --prefer-dist --no-progress --no-suggest
+          composer require "illuminate/database:${{ matrix.eloquent-versions }}" --prefer-dist --no-interaction
+          composer install --prefer-dist --no-interaction
 
       - name: Install PHPUnit
-        run: composer require --dev phpunit/phpunit --no-interaction --prefer-dist --no-progress --no-suggest
+        run: composer require --dev phpunit/phpunit --prefer-dist --no-interaction
 
       - name: Run tests
         run: vendor/bin/phpunit

@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: [ '7.4', '8.0', '8.1' ]
-        laravel-version: [ '8.*', '9.*', '10.*', '11.*' ]
+        php-version: [ '8.0', '8.1', '8.2', '8.3']
+        laravel-version: [ '9.*', '10.*', '11.*' ]
     steps:
       - uses: actions/checkout@v3
 

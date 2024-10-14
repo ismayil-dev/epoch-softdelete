@@ -12,7 +12,7 @@ class EpochCast implements Castable
     /**
      * @return CastsAttributes<\Carbon\Carbon, int>
      */
-    public static function castUsing(array $arguments)
+    public static function castUsing(array $arguments): CastsAttributes
     {
         return new class implements CastsAttributes
         {

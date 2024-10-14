@@ -13,6 +13,13 @@ jobs:
       matrix:
         php-version: [ '8.0', '8.1', '8.2', '8.3' ]
         laravel-version: [ '9.*', '10.*', '11.*' ]
+        exclude:
+          - php-version: '8.0'
+            laravel-version: '10.*'
+          - php-version: '8.0'
+            laravel-version: '11.*'
+          - php-version: '8.1'
+            laravel-version: '11.*'
     steps:
       - uses: actions/checkout@v3
 
@@ -24,8 +31,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "illuminate/database:${{ matrix.laravel-version }}" --with-all-dependencies --prefer-dist --no-interaction
           composer require "illuminate/support:${{ matrix.laravel-version }}" --with-all-dependencies --prefer-dist --no-interaction
+          composer require "illuminate/database:${{ matrix.laravel-version }}" --with-all-dependencies --prefer-dist --no-interaction
           composer install --prefer-dist --no-interaction
 
       - name: Install PHPUnit

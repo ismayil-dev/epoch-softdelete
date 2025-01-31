@@ -1,0 +1,65 @@
+{
+  "name": "ismayil-dev/epoch-softdelete",
+  "description": "A Laravel package that introduces epoch-based soft deletes to handle unique constraints.",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "epoch",
+    "softdelete",
+    "soft-delete",
+    "epoch-softdelete",
+    "epoch-based-softdelete",
+    "laravel-epoch-softdelete",
+    "laravel-softdelete",
+    "laravel-soft-delete",
+    "laravel-epoch-softdelete",
+    "laravel-epoch-based-softdelete",
+    "ismayil-dev",
+    "ismayil-dev/epoch-softdelete"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ismayil Aliyev",
+      "email": "me@ismayil.dev",
+      "homepage": "https://ismayil.dev",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/ismayil-dev/epoch-softdelete",
+  "require": {
+    "php": ">=8.1",
+    "illuminate/support": "^10.0|^11.0",
+    "illuminate/database": "^10.49|^11.0",
+    "laravel/serializable-closure": "^v1.3.5"
+  },
+  "require-dev": {
+    "laravel/pint": ">=1.5.0",
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "^9.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "IsmayilDev\\EpochSoftDelete\\EpochSoftDeleteServiceProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "IsmayilDev\\EpochSoftDelete\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IsmayilDev\\EpochSoftDelete\\Tests\\": "tests/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "preferred-install": "dist",
+    "optimize-autoloader": true
+  }
+}

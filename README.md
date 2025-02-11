@@ -69,6 +69,11 @@ YourModel::find(1)->restore();
 // etc.
 ```
 
+### 📌 `deleted_at` Auto-Casting
+
+When retrieving soft-deleted models, the `deleted_at` column automatically casts to a **Carbon** instance, making it easier to work with.
+This means you can perform all Carbon operations on `deleted_at` just like in Laravel’s default soft deletes. 🎯
+
 ### ⚙️ Handling Existing Projects
 If you're integrating Epoch SoftDelete into an existing project, you must update your existing data before changing the column type.
 

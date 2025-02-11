@@ -14,8 +14,7 @@
     "laravel-soft-delete",
     "laravel-epoch-softdelete",
     "laravel-epoch-based-softdelete",
-    "ismayil-dev",
-    "ismayil-dev/epoch-softdelete"
+    "ismayil-dev"
   ],
   "license": "MIT",
   "authors": [

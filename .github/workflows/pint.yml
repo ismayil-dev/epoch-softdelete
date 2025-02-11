@@ -1,0 +1,21 @@
+name: Laravel Pint
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  pint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-interaction
+      - name: Run Pint
+        run: vendor/bin/pint --test

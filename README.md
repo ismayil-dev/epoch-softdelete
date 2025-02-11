@@ -93,6 +93,19 @@ Schema::table('your_table', function (Blueprint $table) {
 * Zero Learning Curve: Works exactly like Laravel’s default SoftDeletes.
 * Ideal for Multi-Tenant & High-Integrity Systems: Ensures smooth database management in complex applications.
 
+## 📢 Contributing
+We welcome contributions! 🎉
+
+If you find a bug, have a feature request, or want to improve the package:
+* Open an issue with details about the problem or feature request.
+* Submit a pull request (PR) with improvements or fixes.
+
+Before submitting a PR:
+* Make sure your changes follow Laravel and PSR coding standards.
+* Run tests to ensure everything works as expected.
+
+Feel free to contribute and help improve Epoch SoftDelete! 🚀
+
 # 📜 License
 
 This package is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
